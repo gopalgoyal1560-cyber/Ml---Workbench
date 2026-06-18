@@ -95,10 +95,9 @@ class save:
                 "model" : pipe,
                 "col" : col_d
             }
-          
             
             result = joblib.dump(artifact)
-            st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
+            final = st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
             st.write(result)
             if result != None:
                 st.success("Model is downloaded")
