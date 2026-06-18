@@ -95,11 +95,13 @@ class save:
                 "model" : pipe,
                 "col" : col_d
             }
+            buffer = io.BytesIO()
             
-            result = joblib.dump(artifact)
-            final = st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
+            result = joblib.dump(artifact,buffer)
+            buffer.seek(0)
+            final = st.download_button(label = "Download model",data = buffer,file_name = f"{model}.pkl",mime = "application/octet-stream")
             st.write(result)
-            if result != None:
+            if result:
                 st.success("Model is downloaded")
                 st.balloons()
                 st.write(col_d)
