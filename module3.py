@@ -101,7 +101,7 @@ class save:
             st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
             st.write(result)
             if result != None:
-                st.success("Model is saved")
+                st.success("Model is downloaded")
                 st.balloons()
                 st.write(col_d)
         except Exception as e:
