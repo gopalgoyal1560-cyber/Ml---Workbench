@@ -6,11 +6,13 @@ and perform future predictions using either uploaded files or individual inputs.
 This project was designed and developed as a complete machine learning workbench that combines data loading, preprocessing, model training, evaluation, model persistence,
 and inference into a single interactive web application.
 ## Key Features
+
 ### Dataset Loading
 * Upload datasets from local storage
 * Load datasets directly from URLs
 * Support for CSV, Excel (XLSX), and JSON files
 * Instant dataset preview
+
 ### Automated Data Preprocessing
 * Missing value handling
 * Numerical data imputation
@@ -18,6 +20,7 @@ and inference into a single interactive web application.
 * One-Hot Encoding
 * Ordinal Encoding
 * Scikit-Learn preprocessing pipelines
+
 ### Machine Learning Models
 **Regression**
 * Linear Regression
@@ -29,6 +32,7 @@ and inference into a single interactive web application.
 * Decision Tree Classifier
 * Random Forest Classifier
 * XGBoost Classifier
+
 ### Model Evaluation
  **Regression Metrics**
 * Mean Absolute Error (MAE)
@@ -39,10 +43,12 @@ and inference into a single interactive web application.
 * Recall Score
 * F1 Score
 * Confusion Matrix Visualization
+
 ### Model Management
 * Save trained models using Joblib
 * Store preprocessing pipeline with model artifacts
 * Preserve feature metadata for future predictions
+
 ### Prediction System
 **Batch Prediction**
 * Upload new datasets
@@ -51,12 +57,14 @@ and inference into a single interactive web application.
 **Single Record Prediction**
 * Dynamic input generation based on saved model features
 * Real-time prediction for individual samples
+
 ## Technology Stack
 **Frontend - Streamlit**
 **Machine Learning - Scikit-Learn,XGBoost**
 **Data Processing - Pandas,NumPy**
 **Visualization - Matplotlib**
 **Model Persistence - Joblib**
+
 ## Project Architecture
 Dataset Input
 ↓
@@ -71,6 +79,13 @@ Performance Evaluation
 Model Saving
 ↓
 Prediction Interface
+
+## How to Run
+**Installation**
+pip install -r requirements.txt
+**Run Application**
+streamlit run app.py
+
 ## Learning Outcomes
 Through this project, I gained practical experience in:
 * Machine Learning Pipelines
@@ -78,9 +93,11 @@ Through this project, I gained practical experience in:
 * Model Evaluation
 * Streamlit Application Development
 * User Interface Design for ML Applications
+
 ## Future Scope
 The architecture has been designed to support future expansion into advanced model management, enhanced visual analytics, additional algorithms, and broader deployment capabilities.
 I will try to add cross validation, hyper parameters tunning and inbuilt pretrained ml models, and better layout
+
 ## Author
 **Gopal**
 Computer Science Diploma Student
