@@ -95,10 +95,10 @@ class save:
                 "model" : pipe,
                 "col" : col_d
             }
-            os.makedirs("models",exist_ok = True)
-            model_path = "model/model.pkl"
+          
             
-            result = joblib.dump(artifact,model_path)
+            result = joblib.dump(artifact,model)
+            st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
             st.write(result)
             if result != None:
                 st.success("Model is saved")
