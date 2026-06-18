@@ -99,6 +99,6 @@ The architecture has been designed to support future expansion into advanced mod
 I will try to add cross validation, hyper parameters tunning and inbuilt pretrained ml models, and better layout
 
 ## Author
-**Gopal**
+Gopal
 Computer Science Diploma Student
 Machine Learning and Software Development Enthusiast
