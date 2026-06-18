@@ -89,7 +89,7 @@ except Exception as e:
 name = st.text_input("Enter file name if you want to save model: ")
 st.write("⚠️Only save model if you are satisfied with it and name the file carefully ")
 
-if name != "" and st.button("Save model"):
+if name != "":
     try:
         mod3.save(pipe,col,st.session_state["file_r"],name,target)
     except Exception as e:
