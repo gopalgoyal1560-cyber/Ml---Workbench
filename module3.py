@@ -107,4 +107,4 @@ class save:
                 st.balloons()
                 st.write(col_d)
         except Exception as e:
-            st.write("")
+            st.write(str(e))
