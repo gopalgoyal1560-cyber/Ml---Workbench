@@ -10,6 +10,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import joblib 
+import os
 def LoadFile(file,t):
     df = None
     if file is None:
@@ -94,7 +95,10 @@ class save:
                 "model" : pipe,
                 "col" : col_d
             }
-            result = joblib.dump(artifact,model)
+            os.makedirs("models",exist_ok = True)
+            model_path = "model/model.pkl"
+            
+            result = joblib.dump(artifact,model_path)
             st.write(result)
             if result != None:
                 st.success("Model is saved")
