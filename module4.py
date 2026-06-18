@@ -87,7 +87,7 @@ except Exception as e:
     st.write("Always check values and models  you face any issue ")
 
 name = st.text_input("Enter file name if you want to save model: ")
-st.write("⚠️Only save model if you are satisfied with it and name the file carefully ")
+st.write("⚠️Only save model if you are satisfied with it and do not write file extension it is stored as .pkl by default")
 
 if name != "":
     try:
