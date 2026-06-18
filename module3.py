@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import joblib 
 import os
+import io
 def LoadFile(file,t):
     df = None
     if file is None:
