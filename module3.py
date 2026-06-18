@@ -97,7 +97,7 @@ class save:
             }
           
             
-            result = joblib.dump(artifact,model)
+            result = joblib.dump(artifact)
             st.download_button(lable = "Download model",data = result,file_name = model,mime = "application/octet-stream")
             st.write(result)
             if result != None:
