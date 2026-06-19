@@ -1,6 +1,6 @@
 # ML Workbench
 ## Train, Evaluate, Save, and Reuse Machine Learning Models Without Writing Code
-# You can use app from this url 
+# You can use app from this link 
 [ML Workbench](https://ml---workbench-ku6i4puhjyf7pkqnniacnr.streamlit.app)
 # Breif Description
 ML Workbench is a Streamlit-based machine learning platform that simplifies the end-to-end workflow of building predictive models from tabular datasets.
