@@ -84,7 +84,7 @@ try:
                         )
             st.pyplot(fig)
 except Exception as e:
-    st.write("traceback.format_exc()")
+    st.write(traceback.format_exc())
 
 name = st.text_input("Enter file name if you want to save model: ")
 st.write("⚠️Only save model if you are satisfied with it and do not write file extension it is stored as .pkl by default")
