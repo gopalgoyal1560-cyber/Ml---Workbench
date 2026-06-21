@@ -23,7 +23,7 @@ def everything(X,feature,file_r,target):
             st.session_state["value"] = Y.nunique()
         size = st.sidebar.slider("Select test_size",min_value=0.1,max_value=0.8,value=0.8)
         model = st.selectbox("Select Model",[
-        DecisionTreeRegressor(random_state=0),RandomForestRegressor(random_state=0),LinearRegression(),XGBRegressor(random_state = 0),
+        DecisionTreeRegressor(max_depth = 1000,random_state=0),RandomForestRegressor(random_state=0),LinearRegression(),XGBRegressor(random_state = 0),
         LogisticRegression(random_state = 0),DecisionTreeClassifier(random_state = 0),RandomForestClassifier(random_state=0),XGBClassifier(random_state = 0)])
         preprocess = mod3.split(X,Y,size) 
         final = mod3.train(preprocess.one_hot_col,preprocess.ord_col,preprocess.imputable_c,preprocess.imputable_n,model,preprocess.X_train,preprocess.Y_train,preprocess.X_valid)
