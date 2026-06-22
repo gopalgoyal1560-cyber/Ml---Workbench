@@ -33,10 +33,10 @@ class split:
     def __init__(self,X,Y,size):
         self.flag = 0
         X_train,X_valid,Y_train,Y_valid = train_test_split(X,Y,test_size = size,random_state = 0)
-        self.one_hot_col = [i for i in X_train.columns if X_train[i].dtype == object and X_train[i].nunique() <= 15]
-        self.ord_col =  [i for i in X_train.columns if X_train[i].dtype == object and X_train[i].nunique() > 15]
+        self.one_hot_col = [i for i in X_train.select.dtypes(include = 'object').columns if X_train[i].nunique() <= 15]
+        self.ord_col =   [i for i in X_train.select.dtypes(include = 'object').columns if X_train[i].nunique() > 15]
         self.imputable_c = [i for i in X_train.columns if X_train[i].dtype == object and X_train[i].isnull().any()]
-        self.imputable_n = [i for i in X_train.columns if (X_train[i].dtype == int or X_train[i].dtype == float) and  X_train[i].isnull().any()] 
+        self.imputable_n = X_train.select.dtypes(include = np.number).columns
         self.X_train,self.X_valid = X_train,X_valid
         self.Y_train,self.Y_valid = Y_train,Y_valid    
 
