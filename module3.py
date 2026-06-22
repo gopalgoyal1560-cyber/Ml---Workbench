@@ -42,15 +42,26 @@ class split:
 
 class train:
     def __init__(self,one_hot_col,ord_col,imputable_c,imputable_n,model,X_train,Y_train,X_valid):
-        processed = ColumnTransformer(transformers=[
-             ('impute_num',SimpleImputer(strategy="mean"),imputable_n),
-             ('impute_cat',SimpleImputer(strategy="most_frequent"),imputable_c),
-             ('one_hot_encode',OneHotEncoder(handle_unknown='ignore'),one_hot_col),
-             ('ord_encode',OrdinalEncoder(handle_unknown='use_encoded_value',unknown_value=-1,encoded_missing_value=-1),ord_col)
-        ],remainder='passthrough')
-        self.Pipe = Pipeline(steps = [
-             ('pr',processed),
-             ('model',model)
+        Preprocess_imp = Pipeline(steps=[
+            ('impute_num',SimpleImputer(strategy='median'))
+        ])
+        Preprocess_enc_one= Pipeline(steps = [
+            ('impute_cat',SimpleImputer(strategy='most_frequent')),
+            ('one_hot',OneHotEncoder(handle_unknown='infrequent_if_exist',sparse_output=False)),                                 
+        ])
+        Preprocess_enc_ord = Pipeline(steps = [
+            ('impute_cat',SimpleImputer(strategy='most_frequent')),
+            ('ordinal',OrdinalEncoder(handle_unknown='use_encoded_value',unknown_value=-1))
+        ])
+        
+        Preprocess = ColumnTransformer(transformers=[
+            ('step1',Preprocess_imp,imputable_n),
+            ('step2',Preprocess_enc_one,one_hot_col),
+            ('step3',Preprocess_enc_ord,ord_col)
+        ])
+        Pipe = Pipeline(steps = [
+            ('preprocess',Preprocess),
+            ('model',model)
         ])
         self.Pipe.fit(X_train,Y_train)
         st.success("Training is completed")
