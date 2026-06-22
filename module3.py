@@ -36,7 +36,7 @@ class split:
         self.one_hot_col = [i for i in X_train.select_dtypes(include = 'object').columns if X_train[i].nunique() <= 15]
         self.ord_col =   [i for i in X_train.select_dtypes(include = 'object').columns if X_train[i].nunique() > 15]
         self.imputable_c = [i for i in X_train.columns if X_train[i].dtype == object and X_train[i].isnull().any()]
-        self.imputable_n = X_train.select_dtypes(include = np.number).columns
+        self.imputable_n = X_train.select_dtypes(include = ['int64','float64']).columns
         self.X_train,self.X_valid = X_train,X_valid
         self.Y_train,self.Y_valid = Y_train,Y_valid    
 
