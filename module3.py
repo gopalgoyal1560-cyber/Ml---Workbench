@@ -59,7 +59,7 @@ class train:
             ('step2',Preprocess_enc_one,one_hot_col),
             ('step3',Preprocess_enc_ord,ord_col)
         ])
-        Pipe = Pipeline(steps = [
+        self.Pipe = Pipeline(steps = [
             ('preprocess',Preprocess),
             ('model',model)
         ])
