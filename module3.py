@@ -58,7 +58,7 @@ class train:
             ('step1',Preprocess_imp,imputable_n),
             ('step2',Preprocess_enc_one,one_hot_col),
             ('step3',Preprocess_enc_ord,ord_col)
-        ])
+        ],remainder = 'passthrough')
         self.Pipe = Pipeline(steps = [
             ('preprocess',Preprocess),
             ('model',model)
