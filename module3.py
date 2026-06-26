@@ -113,9 +113,9 @@ class save:
             buffer.seek(0)
             final = st.download_button(label = "Download model",data = buffer,file_name = f"{model}.pkl",mime = "application/octet-stream")
             st.write(result)
-            if result:
+            if final:
                 st.success("Model is downloaded")
-                st.balloons()
+                st.snow()
                 st.write(col_d)
         except Exception as e:
             st.write(str(e))
