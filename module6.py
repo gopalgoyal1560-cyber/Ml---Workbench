@@ -59,7 +59,7 @@ try:
                     elif col[i] == np.dtype("O"):
                         d[i] = st.text_input(f"Enter category {i}")
                     elif col[i] == np.dtype("object"):
-                        d[i] = st.text_input(f"Enter Value}")
+                        d[i] = st.text_input(f"Enter Value : ")
                 if st.form_submit_button("Submit"):
                     st.write("Submitted")
                     data,data_r = [],[]
